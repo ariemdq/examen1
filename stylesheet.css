@@ -1,0 +1,61 @@
+body{
+    padding: 1%;
+    background-size: auto;
+    background-color: #343a40!important;
+    color: whitesmoke !important; 
+}
+.navbar{
+    background-color: #343a40;
+}
+.navbar-light .navbar-brand {
+    color: whitesmoke !important;
+    font-weight: bold;  
+}
+.nav-link {
+    color: whitesmoke !important;
+}
+
+.boton{
+    background-color : #697480 !important;
+    font-weight: bold;
+    border-color: black; 
+    border-radius: 3px;
+    width: 75%;
+    color: whitesmoke;
+    
+}
+
+.boton:hover{
+    background-color: #cbd8e6!important;
+    color: #3f1520 !important;
+} 
+
+.textosYbotones {
+    align-self: baseline;
+}    
+
+.col-lg-4 {
+    align-items: center;
+
+}
+
+.col-lg-6 {
+    flex-wrap: wrap;
+}
+
+
+
+
+.col-lg-8 {
+    border-bottom: 1px whitesmoke groove;
+}
+
+
+.up {
+    height: 30%;
+}
+
+.down {
+    height: 70%
+}
+

@@ -1,26 +1,28 @@
-function longitudes(){
-    var arreglo1 = []
-    arreglo1 = document.getElementsByTagName('input') 
-    ejercicio1()
+function ejercicio1(){
+    var entrada = document.getElementById('entrada').value;
+    var arreglo = entrada.split(",");
+    if  (typeof(arreglo) != 'object') {
+        alert("Error - Ingrese elementos separados por comas")
+    }
+    document.getElementById('resultado').innerHTML = "Resultado: " + longitudes(arreglo) 
 }
-
-
-function ejercicio(arreglo1) {
+function longitudes(arreglo1) {
     salida = [];
     for (let i = 0; i < arreglo1.length; i++){
         if (arreglo1[i].length >= 0) {
             salida.push(arreglo1[i].length)
         }   
     }
-    alert(salida)
+    return salida 
 }
 
 function ejercicio2(){
     var texto = document.getElementById('entrada').value;
-    document.getElementById('resultado').innerHTML = "salida: " + sinVocales(texto) 
-
+    if  (typeof(texto) != 'string' ) {
+        alert("Error - Ingrese un string o texto correcto")
+    }
+    document.getElementById('resultado').innerHTML = "Resultado: " + sinVocales(texto) 
 }
-
 function sinVocales(texto2){
     vocales = ['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']
     salida = ''; 
@@ -33,31 +35,16 @@ function sinVocales(texto2){
         texto2 = salida;
         salida = '';
     } 
-    return texto2
+    return texto2;
 }
 
-function eliminaRepetidos1(arreglo){
-    counter = 0
-    repe = [];
-    for (let i = 0; i < arreglo.length; i++){
-        for (let j =0; j < arreglo.length-i; j++){                 
-            if (arreglo[i] == arreglo[j]) {
-                counter = counter + 1 
-            }
-            if (counter >= 2) {
-                repe.push(arreglo[i])
-                counter = 0 
-            }
-        }
-    } 
-    for (let j =0; j < repe.length; j++){   
-        for (let i = 0; i < arreglo.length; i++){
-            if (arreglo[i] == repe[j]) {
-                arreglo.splice(i,1)
-            }    
-        }       
+function ejercicio3(){
+    var entrada = document.getElementById('entrada').value;
+    var arreglo = entrada.split(",");
+    if  ((arreglo.length <= 1 ) || (typeof(arreglo) != 'object')) {
+        alert("Error - Ingrese elementos separados por comas para comparar")
     }
-    return arreglo               
+    document.getElementById('resultado').innerHTML = "Resultado: : " + eliminaRepetidos(arreglo) 
 }
 function eliminaRepetidos(arreglo){
     let index = []
@@ -73,40 +60,15 @@ function eliminaRepetidos(arreglo){
         } 
         index = []
     }    
-    console.log(salida)
+    return salida
 }
-function estadistica1(cadena){
-    salida = [];
-    counter = 0;
-    cuenta = 0;
-    aux = [];
-    for (let i = 0; i < cadena.length; i++){
-        if (cadena[i] != ' ') {
-            salida.push(cadena[i])
-        }    
-    }    
-    for (let i = 0; i < salida.length; i++){
-        for (let j =0; j < salida.length; j++){                 
-            if (salida[i] == salida[j]) {
-                counter = counter + 1
-            } 
-        }
-        aux.push(salida[i]+'-'+counter)
-        counter = 0
-    }    
-    for (let i = 0; i < aux.length; i++){
-        for (let j =0; j < aux.length; j++){   
-            if (aux[i] == aux[j]) {
-                cuenta = cuenta + 1 
-                if (cuenta > 1)  {
-                    aux.splice(j,1)
-                }
-            }
-        }       
-        cuenta = 0
+function ejercicio4(){
+    var texto = document.getElementById('entrada').value;
+    if  (typeof(texto) != 'string' ) {
+        alert("Error - Ingrese un string o texto correcto")
     }
-    return aux 
-}   
+    document.getElementById('resultado').innerHTML = "Resultado: " + estadistica(texto) 
+}
 function estadistica(cadena){
     let entrada = ''; 
     let counter = 0;
@@ -126,17 +88,24 @@ function estadistica(cadena){
             entrada = ''
         } 
     }  
-    console.log(aux)
+    return aux
 }
-
-
+function ejercicio5(){
+    var entrada = document.getElementById('entrada').value;
+    if  (typeof(entrada) != 'string' ) {
+        alert("Error - Ingrese un string o texto correcto")
+    }
+    var clave = document.getElementById('clave').value;
+    let valor = parseInt(clave)
+    console.log(typeof(valor))
+    document.getElementById('resultado').innerHTML = "Resultado: " + encriptadora(entrada,valor) 
+}
 function encriptadora(texto,clave) {
     texto = texto.toLowerCase();
     if ((clave > 0) && (clave < 26)) {
         let letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z'];    
         let copiaDeLetras = nuevasLetras(letras,clave);
         let salida = '';
-        console.log(copiaDeLetras)
         let nuevaLetra = '';
         for (let j = 0; j < texto.length; j++) {
             nuevaLetra = texto[j]
@@ -148,29 +117,13 @@ function encriptadora(texto,clave) {
             }
             salida = salida + nuevaLetra
         }
-        console.log(salida) 
+        return salida 
     } else { 
-    console.log('el numero no es valido')
+    alert('ingrese un numero valido del 1 al 25')
     }
 }     
-
-
-
-
-
-function nuevasLetras(sapo,pepe) {
-        let copiadas = sapo.slice();
-        copiadas = copiadas.concat(sapo.slice(0,pepe-1)) // copia las primeras letras  
+function nuevasLetras(l,c) {
+        let copiadas = l.slice();// remueve las primeras letras 
+        copiadas = copiadas.concat(l.slice(0,c-1)) // las pone al final de copiadas
     return copiadas 
-}    
-
-function encriptadora2(texto,clave) {
-    texto = texto.toLowerCase();
-    let letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z']    
-    let removidas = []
-    if (clave > 0) {
-        removidas = letras.splice(0,clave) // remueve las primeras letras 
-        letras = letras.concat(removidas) //  las pone al final de letras 
-    }    
-    console.log(letras)
 }    

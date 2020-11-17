@@ -43,13 +43,9 @@ body{
     flex-wrap: wrap;
 }
 
-
-
-
 .col-lg-8 {
     border-bottom: 1px whitesmoke groove;
 }
-
 
 .up {
     height: 30%;

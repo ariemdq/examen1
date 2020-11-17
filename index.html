@@ -40,34 +40,34 @@
                         <div class="col-lg-6">
                                 <div class="row textosYbotones">    
                                     <div class="col-lg-8 ">
-                                        <p>Dado un arreglo N de palabras de entrada, muestre por consola un arreglo N de longitudes de cada palabra.</p>
+                                        <p>Dado un arreglo de palabras de entrada separadas por coma, retorne un arreglo de longitudes de cada palabra</p>
                                     </div>    
                                     <div class="col-lg-4 ">
-                                        <button class="boton ex" onClick="longitudes()">Ejercicio 1</button> 
+                                        <button class="boton ex" onClick="ejercicio1()">Ejercicio 1</button> 
                                         </div>    
                                     <div class="col-lg-8">
-                                        <p>Dado un String de entrada, muestre por consola dicha palabra sin las vocales.</p>
+                                        <p>Dado un String de entrada, retornelo sin las vocales.</p>
                                     </div>    
                                     <div class="col-lg-4">
                                         <button class="boton ex" onClick="ejercicio2()">Ejercicio 2</button>
                                     </div>    
                                     <div class="col-lg-8">
-                                        <p>Determinar los elementos repetidos de un arreglo dado y que los remueva.</p>
+                                        <p>Determinar los elementos repetidos de un arreglo dado, separados por coma, y que los remueva en un retornado.</p>
                                     </div>    
                                     <div class="col-lg-4">
-                                        <button class="boton ex" onClick="eliminaRepetidos(['hola', 'mundo', 'cruel', 'ariel', 'mundo', 'cruel'])">Ejercicio 3</button>
+                                        <button class="boton ex" onClick="ejercicio3()">Ejercicio 3</button>
                                     </div>    
                                     <div class="col-lg-8">
-                                        <p>Dada una palabra cuente el número de veces que aparece cada letra y devuelva por consola un arreglo compuesto por la concatenación de cada letra y el número de veces que apareció.</p>
+                                        <p>Dado un string, cuente el número de veces que aparece cada letra y retorne un arreglo compuesto por la concatenación de cada letra y el número de veces que apareció, sin repetir la letra</p>
                                     </div>    
                                     <div class="col-lg-4">
-                                        <button class="boton ex" onClick="estadistica('Prepárate que viene fuerte!')">Ejercicio 4</button>
+                                        <button class="boton ex" onClick="ejercicio4()">Ejercicio 4</button>
                                     </div>    
                                     <div class="col-lg-8">
-                                        <p>Dado un texto y una clave de cifrado C (número entero positivo entre [1..25]) de entrada, muestre el texto cifrado</p>
+                                        <p>Dado un texto y una clave de cifrado (número entero positivo entre [1::25]) de entrada, muestre el texto cifrado</p>
                                     </div>    
                                     <div class="col-lg-4">
-                                        <button class="boton ex" onClick="encriptadora('¿Pero qué vaina es ésta Rossi? 3er ejercicio y ya me estás complicando la vida!! ',3)">Ejercicio 5</button>
+                                        <button class="boton ex" onClick="ejercicio5()">Ejercicio 5</button>
                                     </div>    
 
                                 </div>    
@@ -80,8 +80,16 @@
                                         <p>Entrada  </p>
                                     </span>    
 
-                                    <span class="col-md-10 ">
+                                    <span class="col-md-6 ">
                                         <input class="form-control mr-1" id='entrada'>
+                                    </span>    
+
+                                    <span class="col-md-2 ">
+                                        <p>Clave  </p>
+                                    </span>  
+
+                                    <span class="col-md-2 ">
+                                        <input class="form-control sm" id='clave'>
                                     </span>    
                             
                             </div>    
@@ -89,7 +97,7 @@
                             <div class="row down bg-secondary">    
 
                                 <span class="col-md-12" >
-                                    <p id='resultado'>Salida  </p>
+                                    <p id='resultado'>Resultado: </p>
                                 </span>    
 
                             </div>                              

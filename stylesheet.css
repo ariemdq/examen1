@@ -15,14 +15,19 @@ body{
     color: whitesmoke !important;
 }
 
+.textosYbotones {
+    display: flex;
+
+
+}
 .boton{
     background-color : #697480 !important;
     font-weight: bold;
     border-color: black; 
     border-radius: 3px;
-    width: 75%;
+    width: 100%;
     color: whitesmoke;
-    
+
 }
 
 .boton:hover{
@@ -30,28 +35,30 @@ body{
     color: #3f1520 !important;
 } 
 
-.textosYbotones {
-    align-self: baseline;
-}    
+.col-md-12 {
+    display: flex;
+}
 
-.col-lg-4 {
-    align-items: center;
+.izq {
+    display: flex;
+    justify-content: center;
 
 }
 
-.col-lg-6 {
-    flex-wrap: wrap;
+.col-md-4 {
+    align-content: center;
+    justify-content: center;
+
 }
 
-.col-lg-8 {
+.col-md-8 {
     border-bottom: 1px whitesmoke groove;
 }
 
-.up {
-    height: 30%;
-}
-
 .down {
-    height: 70%
+
+    height: 45%;
+    flex-direction: column;
+
 }
 

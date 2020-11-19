@@ -3,8 +3,9 @@ function ejercicio1(){
     var arreglo = entrada.split(",");
     if  (typeof(arreglo) != 'object') {
         alert("Error - Ingrese elementos separados por comas")
+        document.getElementById('entrada').value = "";
     }
-    document.getElementById('resultado').innerHTML = "Resultado: " + longitudes(arreglo) 
+    document.getElementById('resultado').innerHTML = "Longitud = " + longitudes(arreglo) 
 }
 function longitudes(arreglo1) {
     salida = [];
@@ -20,8 +21,9 @@ function ejercicio2(){
     var texto = document.getElementById('entrada').value;
     if  (typeof(texto) != 'string' ) {
         alert("Error - Ingrese un string o texto correcto")
+        document.getElementById('entrada').value = "";
     }
-    document.getElementById('resultado').innerHTML = "Resultado: " + sinVocales(texto) 
+    document.getElementById('resultado').innerHTML = "Sin Vocales = " + sinVocales(texto) 
 }
 function sinVocales(texto2){
     vocales = ['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']
@@ -43,8 +45,9 @@ function ejercicio3(){
     var arreglo = entrada.split(",");
     if  ((arreglo.length <= 1 ) || (typeof(arreglo) != 'object')) {
         alert("Error - Ingrese elementos separados por comas para comparar")
+        document.getElementById('entrada').value = "";
     }
-    document.getElementById('resultado').innerHTML = "Resultado: : " + eliminaRepetidos(arreglo) 
+    document.getElementById('resultado').innerHTML = "Sin repetidos =  " + eliminaRepetidos(arreglo) 
 }
 function eliminaRepetidos(arreglo){
     let index = []
@@ -66,8 +69,9 @@ function ejercicio4(){
     var texto = document.getElementById('entrada').value;
     if  (typeof(texto) != 'string' ) {
         alert("Error - Ingrese un string o texto correcto")
+        document.getElementById('entrada').value = "";
     }
-    document.getElementById('resultado').innerHTML = "Resultado: " + estadistica(texto) 
+    document.getElementById('resultado').innerHTML = "Repeticion de Caracteres = " + estadistica(texto) 
 }
 function estadistica(cadena){
     let entrada = ''; 
@@ -97,8 +101,7 @@ function ejercicio5(){
     }
     var clave = document.getElementById('clave').value;
     let valor = parseInt(clave)
-    console.log(typeof(valor))
-    document.getElementById('resultado').innerHTML = "Resultado: " + encriptadora(entrada,valor) 
+    document.getElementById('resultado').innerHTML = "Texto cifrado en " + valor + " = " + encriptadora(entrada,valor) 
 }
 function encriptadora(texto,clave) {
     texto = texto.toLowerCase();
@@ -120,6 +123,7 @@ function encriptadora(texto,clave) {
         return salida 
     } else { 
     alert('ingrese un numero valido del 1 al 25')
+    document.getElementById('clave').value = "";
     }
 }     
 function nuevasLetras(l,c) {
@@ -127,3 +131,7 @@ function nuevasLetras(l,c) {
         copiadas = copiadas.concat(l.slice(0,c-1)) // las pone al final de copiadas
     return copiadas 
 }    
+
+function limpiar(){
+    document.getElementsByClassName('form-control').reset();
+}
